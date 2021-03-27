@@ -1,0 +1,54 @@
+@use '../abstracts';
+@use '../base';
+
+
+.button {
+    
+
+    &--primary {
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: base.$extraBold;
+        letter-spacing: 1px;
+        color: abstracts.$primary10;
+        padding: 1.5625rem 2.1875rem;
+        background-color: abstracts.$primary500;
+        transition: background-color 200ms ease-in-out;
+
+        &:hover {
+            background-color: abstracts.$primary300;
+        }
+    }
+
+    &--secondary {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: base.$extraBold;
+        letter-spacing: 1px;
+        color: abstracts.$primary10;
+        padding: 1.4375rem 2.375rem;
+        background-color: abstracts.$secondary500;
+        transition: background-color 200ms ease-in-out;
+
+        &:hover {
+            background-color: abstracts.$secondary400;
+        }
+    }
+
+    &--underline {
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: base.$extraBold;
+        letter-spacing: 1px;
+        color: abstracts.$primary500;
+        padding: 1.4375rem 2.375rem;
+        border-bottom: 2px solid abstracts.$primary500;
+
+        &::after{
+            content: '';
+            border-bottom: 2px solid abstracts.$primary500;
+            width: 100%;
+        }
+    }
+
+}

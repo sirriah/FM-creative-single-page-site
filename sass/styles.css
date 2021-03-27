@@ -1,6 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap");
 body {
-  font-size: 15px;
-  color: blue;
+  box-sizing: border-box;
+  font-family: "Commissioner", sans-serif;
+}
+
+.button--primary {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
+  padding: 1.5625rem 2.1875rem;
+  background-color: #f94e4e;
+  transition: background-color 200ms ease-in-out;
+}
+.button--primary:hover {
+  background-color: #ff9494;
+}
+.button--secondary {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
+  padding: 1.4375rem 2.375rem;
+  background-color: #181820;
+  transition: background-color 200ms ease-in-out;
+}
+.button--secondary:hover {
+  background-color: #434356;
+}
+.button--underline {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #f94e4e;
+  padding: 1.4375rem 2.375rem;
+  border-bottom: 2px solid #f94e4e;
+}
+.button--underline::after {
+  content: "";
+  border-bottom: 2px solid #f94e4e;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
