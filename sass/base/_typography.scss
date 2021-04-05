@@ -5,3 +5,45 @@ $regular: 400;
 $extraBold: 800;
 
 
+h1, h2, h3{
+    font-family: $font;
+    font-weight: $extraBold;
+}
+
+h1{
+    font-size: 5rem;
+    line-height: 5.5rem;
+}
+
+h2{
+    font-size: 3.5rem;
+    line-height: 4rem;
+}
+
+h3{
+    font-size: 1.125rem;
+    line-height: 2rem;
+}
+
+h4{
+    font-size: 1rem;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: $regular;
+    text-decoration: underline;
+}
+
+h6 {
+    font-size: 0.9rem;
+    font-weight: $regular;
+    text-decoration: underline;
+}
+
+p{
+    font-size: 1.125rem;
+    font-weight: $regular;
+    line-height: 2rem;
+    
+}

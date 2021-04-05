@@ -1,4 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap");
+h1, h2, h3 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 5.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+h6 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
 body {
   box-sizing: border-box;
   font-family: "Commissioner", sans-serif;
@@ -36,13 +78,29 @@ body {
   font-weight: 800;
   letter-spacing: 1px;
   color: #f94e4e;
-  padding: 1.4375rem 2.375rem;
-  border-bottom: 2px solid #f94e4e;
+  padding: 0.5rem 0rem;
+  margin-inline: 2.375rem;
+  position: relative;
+  transition: opacity 200ms ease-in-out;
 }
 .button--underline::after {
   content: "";
-  border-bottom: 2px solid #f94e4e;
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  right: 0rem;
+  height: 2px;
   width: 100%;
+  background-color: #f94e4e;
+}
+.button--underline:hover {
+  opacity: 0.6;
+}
+.button--arrow {
+  transition: opacity 200ms ease-in-out;
+}
+.button--arrow:hover {
+  opacity: 0.6;
 }
 
 /*# sourceMappingURL=styles.css.map */

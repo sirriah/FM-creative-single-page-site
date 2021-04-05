@@ -41,14 +41,35 @@
         font-weight: base.$extraBold;
         letter-spacing: 1px;
         color: abstracts.$primary500;
-        padding: 1.4375rem 2.375rem;
-        border-bottom: 2px solid abstracts.$primary500;
-
+        padding: 0.5rem 0rem;
+        margin-inline: 2.375rem;
+        position: relative;
+        transition: opacity 200ms ease-in-out;
+      
         &::after{
             content: '';
-            border-bottom: 2px solid abstracts.$primary500;
+            position: absolute;
+            bottom: 0rem;
+            left: 0rem;
+            right: 0rem;
+            height: 2px;
             width: 100%;
+            background-color: abstracts.$primary500;
+        }
+
+        &:hover{
+            opacity: 0.6;
         }
     }
+
+    &--arrow{
+
+        transition: opacity 200ms ease-in-out;
+
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+
 
 }
