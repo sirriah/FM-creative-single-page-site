@@ -46,6 +46,47 @@ body {
   font-family: "Commissioner", sans-serif;
 }
 
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  text-decoration: none;
+}
+
+.mobile-only {
+  display: block;
+}
+@media screen and (min-width: 40em) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+.tablet-desktop {
+  display: block;
+}
+@media screen and (max-width: 39.9375em) {
+  .tablet-desktop {
+    display: none;
+  }
+}
+
+.hamburger-menu span {
+  width: 1.5rem;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 .button--primary {
   text-decoration: none;
   font-size: 1.125rem;

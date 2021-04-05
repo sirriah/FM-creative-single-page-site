@@ -1,4 +1,32 @@
+@use '../abstracts';
+
 body{
     box-sizing: border-box;
     font-family: "Commissioner", sans-serif;
 }
+
+.sr-only{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    text-decoration: none;
+}
+
+.mobile-only{
+    display: block;
+    @include abstracts.breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.tablet-desktop{
+    display: block;
+    @include abstracts.breakpoint-down(small){
+        display: none;
+    }
+}
+

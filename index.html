@@ -10,69 +10,47 @@
   <title>Frontend Mentor | Creative single page site</title>
 </head>
 <body>
-  <header>
-    <img src="./assets/desktop/logo.svg" alt="Creative company logo">
-    <div class="navigation">
-      <div class="navigation-wrapper">
-        <nav aria-label="Main">
-          <li>About</li>
-          <li>Service</li>
-          <li>Projects</li>
-          <a href="#">Schedule a Call</a>
-        </nav>
+  <div class="grid-wrapper">
+    <header>
+      <img src="./assets/desktop/logo.svg" alt="Creative company logo">
+      
+      <div class="menu">
+        <div class="hamburger-menu mobile-only">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+        <div class="mobile-nav hidden" id="mobile-navigation">
+          <nav aria-label="Main">
+            <li>About</li>
+            <li>Service</li>
+            <li>Projects</li>
+            <a href="#" role="button">Schedule a Call</a>
+          </nav>
+        </div>
+          
+          
+        </div>
+        
+        <div class="desktop-nav tablet-desktop">
+        
+            <nav aria-label="Main">
+              <li>About</li>
+              <li>Service</li>
+              <li>Projects</li>
+              <a href="#" role="button">Schedule a Call</a>
+            </nav>
+          
+          
+        </div>
       </div>
-      <div class="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <h1>
-      Nadpis 1
-    </h1>
-
-    <h2>
-      Nadpis 2
-    </h2>
-
-    <h3>
-      Nadpis 3
-    </h3>
-
-    <h4>
-      Nadpis 4
-    </h4>
-
-    <h5>
-      Nadpis 5
-    </h5>
-
-    <h6>
-      Nadpis 6
-    </h6>
-
-    <p>
-      odstavec Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Impedit voluptas veniam, asperiores illo tempora enim accusantium 
-      at, atque explicabo fuga iure possimus sit cum. Sunt voluptatem quos facere. 
-      Facilis, voluptatum.
-    </p>
-<a href="#" class="button--primary" role="button">primary</a>
-
-<a href="#" class="button--secondary" role="button">secondary</a>
-
-<a href="#" class="button--underline" role="button">underline</a>
-
-<a href="#" class="button--arrow" role="button">
-  <div class="sr-only">
-    next slide
+      
+  
+  
+    </header>
   </div>
-  <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" ><g stroke="#F94F4F" fill="none" fill-rule="evenodd">
-    <circle cx="20" cy="20" r="19.5"/>
-    <path stroke-width="2" d="M17.5 15l5 5-5 5"/></g></svg></a>
-
-  </header>
+  
 
   About
   Service
@@ -123,5 +101,7 @@
   Let's build something great together.
 
   Schedule a Call
+
+  <script src="./js/navigation.js"></script>
 </body>
 </html>
