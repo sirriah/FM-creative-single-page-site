@@ -2,7 +2,7 @@
 
 .details{
 
-    background-color: abstracts.$secondary500;
+    
 
 
     &__image{
@@ -11,5 +11,25 @@
         background-image: url('../assets/mobile/image-strategic.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    &__design{
+        background-color: abstracts.$secondary500;
+    }
+
+    &__headline{
+        &::before{
+            content: '';
+            background-image: url('../assets/desktop/bg-pattern-wave-red.svg');
+            background-size: cover;
+            position: absolute;
+            transform: translateY(-4rem);
+            width: 3.9375rem;
+            height: 1.8rem;
+        }
+    }
+
+    .container {
+        padding-bottom: 4.5rem;
     }
 }

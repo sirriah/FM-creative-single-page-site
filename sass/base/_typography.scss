@@ -31,9 +31,16 @@ h1{
 }
 
 h2{
-    
-    font-size: 3.5rem;
-    line-height: 4rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 1.375rem;
+
+    @include abstracts.breakpoint-up(medium) {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+
+   
 }
 
 h3{

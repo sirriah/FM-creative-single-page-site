@@ -1,55 +1,48 @@
 @use '../abstracts';
 @use '../base';
 
-
 .button {
-   
-    &--primary {
-        text-decoration: none;
+  text-decoration: none;
+  font-weight: base.$extraBold;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: abstracts.$primary300;
+  }
+
+  &--primary {
+        @extend .button;
         font-size: 1.125rem;
-        font-weight: base.$extraBold;
-        letter-spacing: 1px;
         color: abstracts.$primary10;
         padding: 1.5625rem 2.1875rem;
         background-color: abstracts.$primary500;
-        display: inline-block;
-        transition: background-color 200ms ease-in-out;
-
-        &:hover {
-            background-color: abstracts.$primary300;
-        }
     }
 
     &--secondary {
-        text-decoration: none;
+        @extend .button;
         font-size: 1rem;
-        font-weight: base.$extraBold;
-        letter-spacing: 1px;
         color: abstracts.$primary10;
         padding: 1.4375rem 2.375rem;
         background-color: abstracts.$secondary500;
-        display: inline-block;
-        transition: background-color 200ms ease-in-out;
-
+        
         &:hover {
             background-color: abstracts.$secondary400;
-        }
+          }
     }
 
-    &--underline {
-        text-decoration: none;
-        font-size: 1.125rem;
-        font-weight: base.$extraBold;
-        letter-spacing: 1px;
+  &--underline {
+        @extend .button;
+        font-size: 0.9375rem;
         color: abstracts.$primary500;
         padding: 0.5rem 0rem;
-        margin-inline: 2.375rem;
         position: relative;
-        display: inline-block;
         transition: opacity 200ms ease-in-out;
-      
-        &::after{
-            content: '';
+
+        &::after {
+            content: "";
             position: absolute;
             bottom: 0rem;
             left: 0rem;
@@ -59,19 +52,21 @@
             background-color: abstracts.$primary500;
         }
 
-        &:hover{
-            opacity: 0.6;
+        &:hover {
+          opacity: 0.6;
+          background-color: transparent;
         }
-    }
 
-    &--arrow{
-
-        transition: opacity 200ms ease-in-out;
-
-        &:hover{
-            opacity: 0.6;
+        @include abstracts.breakpoint-up(large) {
+          font-size: 1.125rem;
         }
+  }
+
+  &--arrow {
+    transition: opacity 200ms ease-in-out;
+
+    &:hover {
+      opacity: 0.6;
     }
-
-
+  }
 }

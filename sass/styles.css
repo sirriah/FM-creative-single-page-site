@@ -23,8 +23,15 @@ h1 {
 }
 
 h2 {
-  font-size: 3.5rem;
-  line-height: 4rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-top: 1.375rem;
+}
+@media screen and (min-width: 40em) {
+  h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
 }
 
 h3 {
@@ -114,44 +121,37 @@ body {
   padding: 2.5rem 1.5rem;
 }
 
-.button--primary {
+.button, .button--underline, .button--secondary, .button--primary {
   text-decoration: none;
-  font-size: 1.125rem;
   font-weight: 800;
   letter-spacing: 1px;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: background-color 200ms ease-in-out;
+}
+.button:hover, .button--underline:hover, .button--secondary:hover, .button--primary:hover {
+  background-color: #ff9494;
+}
+.button--primary {
+  font-size: 1.125rem;
   color: white;
   padding: 1.5625rem 2.1875rem;
   background-color: #f94e4e;
-  display: inline-block;
-  transition: background-color 200ms ease-in-out;
-}
-.button--primary:hover {
-  background-color: #ff9494;
 }
 .button--secondary {
-  text-decoration: none;
   font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 1px;
   color: white;
   padding: 1.4375rem 2.375rem;
   background-color: #181820;
-  display: inline-block;
-  transition: background-color 200ms ease-in-out;
 }
 .button--secondary:hover {
   background-color: #434356;
 }
 .button--underline {
-  text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-size: 0.9375rem;
   color: #f94e4e;
   padding: 0.5rem 0rem;
-  margin-inline: 2.375rem;
   position: relative;
-  display: inline-block;
   transition: opacity 200ms ease-in-out;
 }
 .button--underline::after {
@@ -166,6 +166,12 @@ body {
 }
 .button--underline:hover {
   opacity: 0.6;
+  background-color: transparent;
+}
+@media screen and (min-width: 64em) {
+  .button--underline {
+    font-size: 1.125rem;
+  }
 }
 .button--arrow {
   transition: opacity 200ms ease-in-out;
@@ -229,15 +235,27 @@ body {
   background-size: cover;
 }
 
-.details {
-  background-color: #181820;
-}
 .details__image {
   width: 100%;
   height: 12.5rem;
   background-image: url("../assets/mobile/image-strategic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.details__design {
+  background-color: #181820;
+}
+.details__headline::before {
+  content: "";
+  background-image: url("../assets/desktop/bg-pattern-wave-red.svg");
+  background-size: cover;
+  position: absolute;
+  transform: translateY(-4rem);
+  width: 3.9375rem;
+  height: 1.8rem;
+}
+.details .container {
+  padding-bottom: 4.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
