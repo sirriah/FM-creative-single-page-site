@@ -1,0 +1,9 @@
+.hero{
+    &__image{
+        width: 100%;
+        height: 12.5rem;
+        background-image: url('../assets/mobile/image-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

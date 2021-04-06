@@ -1,0 +1,54 @@
+@use '../abstracts';
+@use '../base';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu {
+  position: relative;
+}
+
+.hamburger-menu {
+  span {
+    width: 1.5rem;
+    height: 2px;
+    background-color: abstracts.$secondary400;
+    display: block;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  color: abstracts.$primary10;
+  background-color: abstracts.$secondary900;
+  width: 15.75rem;
+  padding: 1.625rem;
+  text-align: center;
+
+  nav {
+    list-style-type: none;
+  }
+
+  li {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.button--menu {
+  font-size: 1rem;
+  font-weight: base.$regular;
+}
+
+.hidden {
+  display: none;
+}

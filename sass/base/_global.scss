@@ -1,8 +1,14 @@
 @use '../abstracts';
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     box-sizing: border-box;
     font-family: "Commissioner", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .sr-only{
@@ -28,5 +34,9 @@ body{
     @include abstracts.breakpoint-down(small){
         display: none;
     }
+}
+
+.container{
+    padding: 2.5rem 1.5rem;
 }
 
