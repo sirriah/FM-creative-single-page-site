@@ -1,9 +1,7 @@
 @use '../abstracts';
+@use '../base';
 
 .details{
-
-    
-
 
     &__image{
         width: 100%;
@@ -18,18 +16,77 @@
     }
 
     &__headline{
+        position: relative;
         &::before{
             content: '';
             background-image: url('../assets/desktop/bg-pattern-wave-red.svg');
             background-size: cover;
             position: absolute;
-            transform: translateY(-4rem);
+            transform: translateY(-4.75rem);
             width: 3.9375rem;
-            height: 1.8rem;
+            height: 1.8125rem;
         }
     }
 
-    .container {
-        padding-bottom: 4.5rem;
+    &__approach{
+        background-color: abstracts.$primary500;
+        color: abstracts.$primary10;
     }
+
+    &__list{
+        background-color: abstracts.$primary500;
+        color: abstracts.$primary10;
+
+        /* the default list style type is overwritten with "counter". 
+        The leading zero can be set in "list-style-type: decimal-leading-zero",
+        but there will be a dot after the number "01. 02. 03. " etc. 
+
+        tutorial: https://codepen.io/maddesigns/pen/JGQejg
+        stackoverflow: https://stackoverflow.com/questions/5290587/is-there-a-way-to-append-leading-zeros-to-an-ordered-number-list-01-or-001-as
+        documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+        */
+        ol{
+            list-style-type: none;
+            counter-reset: li;
+            display: inline-block;
+            padding-inline: 2.5rem 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li{
+            padding-bottom: 2.2rem;
+        }
+
+        li::before{
+            counter-increment: li;
+            content: counter(li, decimal-leading-zero);
+            position: absolute;
+
+            font-size: 5rem;
+            line-height: 5.5rem;
+            font-weight: base.$extraBold;
+            left: 1.5rem;
+            transform: translateY(-2.8rem);
+            opacity: 0.25;
+        }
+
+        p {
+            margin-top: 1rem;
+        }
+    }
+
+    // the paddings are greater for this part
+
+    .container {
+    
+        padding-bottom: 4.5rem;
+
+
+        &--extra{
+            padding-top: 4.625rem;
+            padding-bottom: 2.75rem;
+        }
+    }
+
+
 }

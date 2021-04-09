@@ -35,8 +35,14 @@ h2 {
 }
 
 h3 {
-  font-size: 1.125rem;
-  line-height: 2rem;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+}
+@media screen and (min-width: 40em) {
+  h3 {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
 }
 
 h4 {
@@ -245,17 +251,70 @@ body {
 .details__design {
   background-color: #181820;
 }
+.details__headline {
+  position: relative;
+}
 .details__headline::before {
   content: "";
   background-image: url("../assets/desktop/bg-pattern-wave-red.svg");
   background-size: cover;
   position: absolute;
-  transform: translateY(-4rem);
+  transform: translateY(-4.75rem);
   width: 3.9375rem;
-  height: 1.8rem;
+  height: 1.8125rem;
+}
+.details__approach {
+  background-color: #f94e4e;
+  color: white;
+}
+.details__list {
+  background-color: #f94e4e;
+  color: white;
+  /* the default list style type is overwritten with "counter". 
+  The leading zero can be set in "list-style-type: decimal-leading-zero",
+  but there will be a dot after the number "01. 02. 03. " etc. 
+
+  tutorial: https://codepen.io/maddesigns/pen/JGQejg
+  stackoverflow: https://stackoverflow.com/questions/5290587/is-there-a-way-to-append-leading-zeros-to-an-ordered-number-list-01-or-001-as
+  documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+  */
+}
+.details__list ol {
+  list-style-type: none;
+  counter-reset: li;
+  display: inline-block;
+  padding-inline: 2.5rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.details__list li {
+  padding-bottom: 2.2rem;
+}
+.details__list li::before {
+  counter-increment: li;
+  content: counter(li, decimal-leading-zero);
+  position: absolute;
+  font-size: 5rem;
+  line-height: 5.5rem;
+  font-weight: 800;
+  left: 1.5rem;
+  transform: translateY(-2.8rem);
+  opacity: 0.25;
+}
+.details__list p {
+  margin-top: 1rem;
 }
 .details .container {
   padding-bottom: 4.5rem;
 }
+.details .container--extra {
+  padding-top: 4.625rem;
+  padding-bottom: 2.75rem;
+}
+
+/*
+    HELLO! :)
+    I am using use-forward and 7-1 Sass architecture in this project
+
+*/
 
 /*# sourceMappingURL=styles.css.map */

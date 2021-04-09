@@ -44,8 +44,15 @@ h2{
 }
 
 h3{
-    font-size: 1.125rem;
-    line-height: 2rem;
+
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+
+    @include abstracts.breakpoint-up(medium){
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+    
 }
 
 h4{
