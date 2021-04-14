@@ -312,11 +312,19 @@ body {
 }
 
 .slider__image {
-  background-image: url("../assets/mobile/image-slide-1.jpg");
   background-size: cover;
   max-width: 100%;
   height: 25.25rem;
   position: relative;
+}
+.slider .slide1 {
+  background-image: url("../assets/mobile/image-slide-1.jpg");
+}
+.slider .slide2 {
+  background-image: url("../assets/mobile/image-slide-2.jpg");
+}
+.slider .slide3 {
+  background-image: url("../assets/mobile/image-slide-3.jpg");
 }
 .slider__content {
   color: white;
@@ -342,6 +350,9 @@ body {
 }
 .slider__text .button--arrow {
   margin-right: 1rem;
+}
+.slider .invisible {
+  display: none;
 }
 
 /*
