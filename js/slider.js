@@ -5,12 +5,12 @@ let previousSlide = 0;
 
 function stepSlide(step){
     previousSlide = currentSlide;
-    currentSlide = (currentSlide + step) % slides.length;
+    currentSlide = (((currentSlide + step) % slides.length) + slides.length) % slides.length;
 
-    slides[previousSlide].classList.add('invisible');
-    slideHeadline[previousSlide].classList.add('invisible');
+    slides[previousSlide].classList.add('hidden');
+    slideHeadline[previousSlide].classList.add('hidden');
 
-    slides[currentSlide].classList.remove('invisible');
-    slideHeadline[currentSlide].classList.remove('invisible');
+    slides[currentSlide].classList.remove('hidden');
+    slideHeadline[currentSlide].classList.remove('hidden');
 }
 

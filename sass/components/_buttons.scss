@@ -4,7 +4,7 @@
 .button {
   text-decoration: none;
   font-weight: base.$extraBold;
-  letter-spacing: 1px;
+  //letter-spacing: 1px;
   text-transform: capitalize;
   display: inline-block;
   transition: background-color 200ms ease-in-out;
@@ -25,7 +25,7 @@
         @extend .button;
         font-size: 1rem;
         color: abstracts.$primary10;
-        padding: 1.4375rem 2.375rem;
+        padding: 1.4375rem 2.8125rem;
         background-color: abstracts.$secondary500;
         
         &:hover {

@@ -17,12 +17,12 @@
 
   <body>
     <div class="grid-wrapper">
-      <header class="header container">
-        <img src="./assets/desktop/logo.svg" alt="Creative company logo" />
+      <header class="header container__crop">
+        <img class="container logo" src="./assets/desktop/logo.svg" alt="Creative company logo" />
 
-        <div class="menu">
+        <div class="menu ">
           <span class="sr-only">Menu</span>
-          <div class="hamburger-menu mobile-only">
+          <div class="hamburger-menu mobile-only container">
             <span></span>
             <span></span>
             <span></span>
@@ -40,12 +40,12 @@
           </div>
         </div>
 
-        <div class="desktop-nav tablet-desktop">
+        <div class="desktop-nav tablet-desktop container">
           <nav aria-label="Main">
             <li>About</li>
             <li>Service</li>
             <li>Projects</li>
-            <a href="#" role="button"> Schedule a Call </a>
+            <a class="button--menu button--secondary" href="#" role="button"> Schedule a Call </a>
           </nav>
         </div>
       </header>
@@ -196,7 +196,7 @@
           </div>
         </section>
       </main>
-      <footer class="container">
+      <footer class="footer footer__container">
         <h2>Let's build something great together.</h2>
         <a href="#" class="button--primary"> Schedule a Call</a>
       </footer>

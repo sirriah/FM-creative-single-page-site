@@ -123,18 +123,30 @@ body {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   padding: 2.5rem 1.5rem;
+}
+@media screen and (min-width: 40em) {
+  .container {
+    padding: 3.5625rem 2.5rem;
+  }
 }
 .container--extra {
   padding-top: 4.625rem;
   padding-bottom: 2.75rem;
 }
+.container__crop {
+  max-width: 90rem;
+  margin: 0px auto;
+}
 
 .button, .button--underline, .button--secondary, .button--primary {
   text-decoration: none;
   font-weight: 800;
-  letter-spacing: 1px;
   text-transform: capitalize;
   display: inline-block;
   transition: background-color 200ms ease-in-out;
@@ -151,7 +163,7 @@ body {
 .button--secondary {
   font-size: 1rem;
   color: white;
-  padding: 1.4375rem 2.375rem;
+  padding: 1.4375rem 2.8125rem;
   background-color: #181820;
 }
 .button--secondary:hover {
@@ -196,7 +208,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-
 .menu {
   position: relative;
 }
@@ -213,7 +224,7 @@ body {
 
 .mobile-nav {
   position: absolute;
-  top: 2.5rem;
+  top: 5rem;
   right: 0;
   color: white;
   background-color: black;
@@ -228,9 +239,27 @@ body {
   padding-bottom: 1.5rem;
 }
 
+.desktop-nav {
+  background-color: #f94e4e;
+  color: white;
+  font-weight: 400;
+}
+.desktop-nav nav {
+  list-style-type: none;
+  float: right;
+}
+.desktop-nav li {
+  display: inline;
+  padding-right: 1.25rem;
+}
+
 .button--menu {
   font-size: 1rem;
-  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  .button--menu {
+    padding: 1.4375rem 1.125rem;
+  }
 }
 
 .hidden {
@@ -351,8 +380,17 @@ body {
 .slider__text .button--arrow {
   margin-right: 1rem;
 }
-.slider .invisible {
-  display: none;
+
+.footer h2 {
+  margin-bottom: 2.875rem;
+}
+.footer .button--primary {
+  font-size: 1rem;
+}
+.footer__container {
+  padding-inline: 1.5rem;
+  padding-top: 4.625rem;
+  padding-bottom: 6.25rem;
 }
 
 /*

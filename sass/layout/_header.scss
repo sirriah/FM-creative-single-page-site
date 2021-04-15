@@ -6,6 +6,18 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
+  @include abstracts.breakpoint-up(medium){
+   
+  }
+
+  .logo{
+    @include abstracts.breakpoint-up(medium){
+
+
+    }
+
+  }
 }
 
 .menu {
@@ -27,7 +39,7 @@
 
 .mobile-nav {
   position: absolute;
-  top: 2.5rem;
+  top: 5rem;
   right: 0;
   color: abstracts.$primary10;
   background-color: abstracts.$secondary900;
@@ -44,9 +56,30 @@
   }
 }
 
+.desktop-nav{
+  background-color: abstracts.$primary500;
+  color: abstracts.$primary10;
+  font-weight: base.$regular;
+  
+
+  nav {
+    list-style-type: none;
+    float: right;
+    
+  }
+
+  li {
+    display: inline;
+    padding-right: 1.25rem;
+  }
+
+}
+
 .button--menu {
   font-size: 1rem;
-  font-weight: base.$regular;
+  @include abstracts.breakpoint-up(medium){
+    padding: 1.4375rem 1.125rem;
+  }
 }
 
 .hidden {

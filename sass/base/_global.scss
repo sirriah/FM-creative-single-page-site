@@ -36,12 +36,25 @@ body{
     }
 }
 
+.hidden {
+    display: none;
+  }
+
 .container{
     padding: 2.5rem 1.5rem;
+
+    @include abstracts.breakpoint-up(medium){
+        padding: 3.5625rem 2.5rem;
+    }
     
     &--extra{
         padding-top: 4.625rem;
         padding-bottom: 2.75rem;
+    }
+
+    &__crop{
+        max-width: 90rem;
+        margin: 0px auto;
     }
 }
 
