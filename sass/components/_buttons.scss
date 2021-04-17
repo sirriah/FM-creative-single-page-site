@@ -25,12 +25,17 @@
         @extend .button;
         font-size: 1rem;
         color: abstracts.$primary10;
-        padding: 1.4375rem 2.8125rem;
+        padding: 1.4375rem 1.125rem;
+        //padding: 1.4375rem 2.8125rem;
         background-color: abstracts.$secondary500;
         
         &:hover {
             background-color: abstracts.$secondary400;
           }
+
+        @include abstracts.breakpoint-up(large){
+          padding-inline: 2.75rem; 
+        }
     }
 
   &--underline {

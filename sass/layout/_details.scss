@@ -3,39 +3,107 @@
 
 .details{
 
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    
+    @include abstracts.breakpoint-up(medium){
+        grid-template-rows: repeat(10, 7.5rem);
+    row-gap: 1rem;
+    }
+
+
     &__image{
+        grid-column: 1 / -1;
+        grid-row: 1;
         width: 100%;
         height: 12.5rem;
         background-image: url('../assets/mobile/image-strategic.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include abstracts.breakpoint-up(medium){
+            background-image: url('../assets/tablet/image-strategic.jpg');
+            background-position: cover;
+            height: 100%;
+            grid-column: 1 / 6;
+            grid-row: 1 / 6;
+        }
     }
 
     &__design{
+        padding-top: 3.125rem;
+        padding-bottom: 4.5rem;
+        padding-inline: 1.5rem;
+
+        grid-row: 2;
+        grid-column: 1 / -1;
         background-color: abstracts.$secondary500;
+
+        @include abstracts.breakpoint-up(medium){
+            
+            grid-column: 6 / -1;
+            grid-row: 1 / 5;
+        }
     }
 
     &__headline{
+        //grid-row: 1;
+        
+        grid-column: 2 / 10;
         position: relative;
         &::before{
             content: '';
             background-image: url('../assets/desktop/bg-pattern-wave-red.svg');
             background-size: cover;
             position: absolute;
-            transform: translateY(-4.75rem);
+            transform: translateY(-5.5rem);
             width: 3.9375rem;
             height: 1.8125rem;
         }
     }
 
+    &__paragraph{
+       // grid-row: 2;
+        grid-column: 2 / 10;
+    }
+
+    &__button{
+       // grid-row: 3;
+        grid-column: 2 / 10;
+    }
+
     &__approach{
+        
+        grid-row: 3;
+        grid-column: 1 / -1;
         background-color: abstracts.$primary500;
         color: abstracts.$primary10;
+        padding-inline: 1.5rem;
+        padding-top: 4.625rem; 
+        padding-bottom: 2.875rem;
+
+        @include abstracts.breakpoint-up(medium){
+            background-color: abstracts.$primary10;
+            color: abstracts.$secondary900;
+            grid-column: 1 / 5;
+            grid-row: 6 / 10;
+        }
+
+
     }
 
     &__list{
+        grid-row: 4;
+        grid-column: 1 / -1;
         background-color: abstracts.$primary500;
         color: abstracts.$primary10;
+
+        @include abstracts.breakpoint-up(medium){
+            
+            grid-column: 6 / -1;
+            grid-row: 5 / 10;
+        }
 
         /* the default list style type is overwritten with "counter". 
         The leading zero can be set in "list-style-type: decimal-leading-zero",
@@ -76,7 +144,7 @@
     }
 
     // the paddings are greater for this part
-
+/*
     .container {
     
         padding-bottom: 4.5rem;
@@ -84,6 +152,5 @@
 
         
     }
-
-
+*/
 }

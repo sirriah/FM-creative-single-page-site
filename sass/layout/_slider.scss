@@ -1,7 +1,8 @@
 @use '../abstracts';
 
 .slider{
-
+    display: grid;
+    grid-column: 1 / -1;
     &__image{
         
         background-size: cover;
@@ -49,7 +50,10 @@
     &__text{
         color: abstracts.$primary10;
         background-color: abstracts.$secondary900;
+        padding-top: 2.5rem;
         padding-bottom: 4rem;
+        padding-inline: 1.5rem; 
+        
 
         .button--arrow{
             margin-right: 1rem;

@@ -3,108 +3,109 @@
 
 .header {
   display: grid;
-  grid-template-columns: 
-  minmax(1.5rem, 1fr) 
-  minmax(auto, 34.375rem) 
-  minmax(0.1rem, 1rem)
-  minmax(auto, 33.375rem) 
-  minmax(1.5rem, 1fr);
-  height: 6.875rem;
+  grid-template-columns: subgrid;
   align-items: center;
+  //height: 6.875rem;
+  grid-column: 1 / -1;
 
-  .logo{
-    grid-column: 2 / 3;
-   //max-width: 80%;
 
-   @include abstracts.breakpoint-up(medium){
+  .logo {
+    grid-column: 2 / 4;
     
-    max-width: 100%;
 
+    @include abstracts.breakpoint-up(medium) {
+      //max-width: 100%;
+    }
   }
-   
+
+  .menu {
+    align-items: center;
+    height: 100%;
+    grid-column: 5 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-block: 2.5rem;
+    
+
+    @include abstracts.breakpoint-up(medium) {
+      background-color: abstracts.$primary500;
+      grid-column: 5 / -1;
+      padding-block: 3.5625rem;
+    }
+
+    @include abstracts.breakpoint-up(large) {
+      background-color: abstracts.$primary500;
+      grid-column: 6 / -1;
+    }
   }
-  
-    .menu {
-      align-items: center;
-      height: 100%;
-      grid-column: 4 / -1;
-      display: grid;
-      grid-template-columns: subgrid;
-      
 
-      @include abstracts.breakpoint-up(medium){
-        background-color: abstracts.$primary500;
-       // grid-column: 3 / -1;
+  .hamburger-menu {
+    grid-column: 4 / 6;
+    justify-self: end;
+    span {
+      width: 1.5rem;
+      height: 2px;
+      background-color: abstracts.$secondary400;
+      display: block;
 
+      &:not(:last-of-type) {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    color: abstracts.$primary10;
+    background-color: abstracts.$secondary900;
+    width: 15.75rem;
+    padding: 1.625rem;
+    text-align: center;
+
+    nav {
+      list-style-type: none;
+    }
+
+    li {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .desktop-nav {
+    color: abstracts.$primary10;
+    font-weight: base.$regular;
+    grid-column: 5 / 7;
+    justify-self: end;
+    padding-left: 1rem;
+
+    @include abstracts.breakpoint-up(medium) {
+      grid-column: 1 / 6;
+    }
+
+    @include abstracts.breakpoint-up(large) {
+      grid-column: 1 / 5;
+    }
+
+    nav {
+      list-style-type: none;
+      float: right;
+    }
+
+    li {
+      display: inline-block;
+      white-space: nowrap;
+      padding-right: 1.25rem;
+      padding-bottom: 1rem;
+
+      @include abstracts.breakpoint-up(large) {
+        padding-right: 2rem;
       }
     }
 
-    .hamburger-menu {
-      grid-column: 1 / 2;
-      justify-self: end; 
-      span {
-        width: 1.5rem;
-        height: 2px;
-        background-color: abstracts.$secondary400;
-        display: block;
-    
-        &:not(:last-of-type) {
-          margin-bottom: 0.3rem;
-        }
-      }
+    a {
+      display: inline-block;
     }
-
-
-    .mobile-nav {
-      position: absolute;
-      top: 5rem;
-      right: 0;
-      color: abstracts.$primary10;
-      background-color: abstracts.$secondary900;
-      width: 15.75rem;
-      padding: 1.625rem;
-      text-align: center;
-      
-    
-      nav {
-        list-style-type: none;
-      }
-    
-      li {
-        padding-bottom: 1.5rem;
-      }
-    }
-
-    .desktop-nav{
-      
-      color: abstracts.$primary10;
-      font-weight: base.$regular;
-      grid-column: 1 / 2;
-      justify-self: end; 
-      
-    
-      nav {
-        list-style-type: none;
-        float: right;
-        
-      }
-    
-      li {
-        display: inline;
-        padding-right: 1.25rem;
-      }
-    
-    }
-    
-
+  }
 }
-
-
-.button--menu {
-  font-size: 1rem;
-  @include abstracts.breakpoint-up(medium){
-    padding: 1.4375rem 1.125rem;
-  }
-}
-
-

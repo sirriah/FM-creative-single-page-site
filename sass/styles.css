@@ -92,6 +92,7 @@ body {
   font-family: "Commissioner", sans-serif;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 .sr-only {
@@ -127,23 +128,57 @@ body {
   display: none;
 }
 
-.container {
-  padding: 2.5rem 1.5rem;
+.grid_wrapper {
+  display: grid;
+  grid-template-columns: minmax(1.5rem, 1fr) repeat(8, minmax(1rem, 7.8125rem)) minmax(1.5rem, 1fr);
+  /*
+  @include abstracts.breakpoint-up(medium) {
+
+    grid-template-columns:
+      minmax(1rem, 2.5rem)
+      minmax(auto, 16rem)
+      minmax(0.1rem, 1rem)
+      minmax(auto, auto)
+      minmax(1rem, 2.5rem);
+  }
+
+  @include abstracts.breakpoint-up(large) {
+  grid-template-columns:
+      minmax(1.5rem, 1fr)
+      minmax(auto, 34.6875rem)
+      minmax(0.1rem, 1rem)
+      minmax(auto, 33.6875rem)
+      minmax(1.5rem, 1fr);
+  }
+  */
 }
-@media screen and (min-width: 40em) {
-  .container {
-    padding: 3.5625rem 2.5rem;
+@media screen and (min-width: 64em) {
+  .grid_wrapper {
+    column-gap: 1rem;
   }
 }
-.container--extra {
-  padding-top: 4.625rem;
-  padding-bottom: 2.75rem;
-}
-.container__crop {
-  max-width: 90rem;
-  margin: 0px auto;
+
+/*
+
+.container{
+    padding: 2.5rem 1.5rem;
+
+    @include abstracts.breakpoint-up(medium){
+        padding: 3.5625rem 2.5rem;
+    }
+
+    &--extra{
+        padding-top: 4.625rem;
+        padding-bottom: 2.75rem;
+    }
+
+    &__crop{
+        max-width: 90rem;
+        margin: 0px auto;
+    }
 }
 
+*/
 .button, .button--underline, .button--secondary, .button--primary {
   text-decoration: none;
   font-weight: 800;
@@ -163,11 +198,16 @@ body {
 .button--secondary {
   font-size: 1rem;
   color: white;
-  padding: 1.4375rem 2.8125rem;
+  padding: 1.4375rem 1.125rem;
   background-color: #181820;
 }
 .button--secondary:hover {
   background-color: #434356;
+}
+@media screen and (min-width: 64em) {
+  .button--secondary {
+    padding-inline: 2.75rem;
+  }
 }
 .button--underline {
   font-size: 0.9375rem;
@@ -204,32 +244,36 @@ body {
 
 .header {
   display: grid;
-  grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 34.375rem) minmax(0.1rem, 1rem) minmax(auto, 33.375rem) minmax(1.5rem, 1fr);
-  height: 6.875rem;
+  grid-template-columns: subgrid;
   align-items: center;
+  grid-column: 1/-1;
 }
 .header .logo {
-  grid-column: 2/3;
-}
-@media screen and (min-width: 40em) {
-  .header .logo {
-    max-width: 100%;
-  }
+  grid-column: 2/4;
 }
 .header .menu {
   align-items: center;
   height: 100%;
-  grid-column: 4/-1;
+  grid-column: 5/-1;
   display: grid;
   grid-template-columns: subgrid;
+  padding-block: 2.5rem;
 }
 @media screen and (min-width: 40em) {
   .header .menu {
     background-color: #f94e4e;
+    grid-column: 5/-1;
+    padding-block: 3.5625rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .header .menu {
+    background-color: #f94e4e;
+    grid-column: 6/-1;
   }
 }
 .header .hamburger-menu {
-  grid-column: 1/2;
+  grid-column: 4/6;
   justify-self: end;
 }
 .header .hamburger-menu span {
@@ -260,46 +304,147 @@ body {
 .header .desktop-nav {
   color: white;
   font-weight: 400;
-  grid-column: 1/2;
+  grid-column: 5/7;
   justify-self: end;
+  padding-left: 1rem;
+}
+@media screen and (min-width: 40em) {
+  .header .desktop-nav {
+    grid-column: 1/6;
+  }
+}
+@media screen and (min-width: 64em) {
+  .header .desktop-nav {
+    grid-column: 1/5;
+  }
 }
 .header .desktop-nav nav {
   list-style-type: none;
   float: right;
 }
 .header .desktop-nav li {
-  display: inline;
+  display: inline-block;
+  white-space: nowrap;
   padding-right: 1.25rem;
+  padding-bottom: 1rem;
 }
-
-.button--menu {
-  font-size: 1rem;
-}
-@media screen and (min-width: 40em) {
-  .button--menu {
-    padding: 1.4375rem 1.125rem;
+@media screen and (min-width: 64em) {
+  .header .desktop-nav li {
+    padding-right: 2rem;
   }
 }
+.header .desktop-nav a {
+  display: inline-block;
+}
 
+.main {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+}
 .hero__image {
-  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1;
   height: 12.5rem;
   background-image: url("../assets/mobile/image-hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 40em) {
+  .hero__image {
+    background-image: url("../assets/tablet/image-hero.jpg");
+    background-position: right;
+    background-size: contain;
+    height: 100%;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 64em) {
+  .hero__image {
+    background-image: url("../assets/desktop/image-hero.jpg");
+  }
+}
+.hero__text {
+  grid-row: 2;
+  grid-column: 2/10;
+  z-index: 10;
+  padding-top: 2.5rem;
+  padding-bottom: 6rem;
+}
+@media screen and (min-width: 40em) {
+  .hero__text {
+    grid-row: 1;
+    grid-column: 2/7;
+    padding-top: 77px;
+    padding-bottom: 150px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .hero__text {
+    grid-column: 2/6;
+  }
+}
 
+.details {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+  /*
+      .container {
+
+          padding-bottom: 4.5rem;
+
+
+
+      }
+  */
+}
+@media screen and (min-width: 40em) {
+  .details {
+    grid-template-rows: repeat(10, 7.5rem);
+    row-gap: 1rem;
+  }
+}
 .details__image {
+  grid-column: 1/-1;
+  grid-row: 1;
   width: 100%;
   height: 12.5rem;
   background-image: url("../assets/mobile/image-strategic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 40em) {
+  .details__image {
+    background-image: url("../assets/tablet/image-strategic.jpg");
+    background-position: cover;
+    height: 100%;
+    grid-column: 1/6;
+    grid-row: 1/6;
+  }
+}
 .details__design {
+  padding-top: 3.125rem;
+  padding-bottom: 4.5rem;
+  padding-inline: 1.5rem;
+  grid-row: 2;
+  grid-column: 1/-1;
   background-color: #181820;
 }
+@media screen and (min-width: 40em) {
+  .details__design {
+    grid-column: 6/-1;
+    grid-row: 1/5;
+  }
+}
 .details__headline {
+  grid-column: 2/10;
   position: relative;
 }
 .details__headline::before {
@@ -307,15 +452,36 @@ body {
   background-image: url("../assets/desktop/bg-pattern-wave-red.svg");
   background-size: cover;
   position: absolute;
-  transform: translateY(-4.75rem);
+  transform: translateY(-5.5rem);
   width: 3.9375rem;
   height: 1.8125rem;
 }
+.details__paragraph {
+  grid-column: 2/10;
+}
+.details__button {
+  grid-column: 2/10;
+}
 .details__approach {
+  grid-row: 3;
+  grid-column: 1/-1;
   background-color: #f94e4e;
   color: white;
+  padding-inline: 1.5rem;
+  padding-top: 4.625rem;
+  padding-bottom: 2.875rem;
+}
+@media screen and (min-width: 40em) {
+  .details__approach {
+    background-color: white;
+    color: black;
+    grid-column: 1/5;
+    grid-row: 6/10;
+  }
 }
 .details__list {
+  grid-row: 4;
+  grid-column: 1/-1;
   background-color: #f94e4e;
   color: white;
   /* the default list style type is overwritten with "counter". 
@@ -326,6 +492,12 @@ body {
   stackoverflow: https://stackoverflow.com/questions/5290587/is-there-a-way-to-append-leading-zeros-to-an-ordered-number-list-01-or-001-as
   documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
   */
+}
+@media screen and (min-width: 40em) {
+  .details__list {
+    grid-column: 6/-1;
+    grid-row: 5/10;
+  }
 }
 .details__list ol {
   list-style-type: none;
@@ -351,10 +523,11 @@ body {
 .details__list p {
   margin-top: 1rem;
 }
-.details .container {
-  padding-bottom: 4.5rem;
-}
 
+.slider {
+  display: grid;
+  grid-column: 1/-1;
+}
 .slider__image {
   background-size: cover;
   max-width: 100%;
@@ -390,22 +563,30 @@ body {
 .slider__text {
   color: white;
   background-color: black;
+  padding-top: 2.5rem;
   padding-bottom: 4rem;
+  padding-inline: 1.5rem;
 }
 .slider__text .button--arrow {
   margin-right: 1rem;
 }
 
+.footer {
+  grid-column: 1/-1;
+  padding: 4.875rem 1.5rem 6.25rem;
+  /*
+  &__container{
+      padding-inline: 1.5rem;
+      padding-top: 4.625rem;
+      padding-bottom: 6.25rem;
+  }
+  */
+}
 .footer h2 {
   margin-bottom: 2.875rem;
 }
 .footer .button--primary {
   font-size: 1rem;
-}
-.footer__container {
-  padding-inline: 1.5rem;
-  padding-top: 4.625rem;
-  padding-bottom: 6.25rem;
 }
 
 /*
