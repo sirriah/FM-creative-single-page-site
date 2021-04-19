@@ -1,14 +1,54 @@
+@use '../abstracts';
+
 .footer{
     grid-column: 1 / -1;
     padding: 4.875rem 1.5rem 6.25rem;
+    position: relative;
+
+    @include abstracts.breakpoint-up(medium){
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: center;
+        justify-content: center;
+    }
 
     h2{
         margin-bottom: 2.875rem;
+
+        @include abstracts.breakpoint-up(medium){
+            grid-column: 2 / 7;
+        }
     }
 
     .button--primary{
         font-size: 1rem;
+
+        @include abstracts.breakpoint-up(medium){
+            grid-column: 8 / 10;
+            justify-self: end;
+        }
+
     }
+
+    &::before {
+        @include abstracts.breakpoint-up(large) {
+            width: 8.4375rem;
+            height: 3.8125rem;
+            
+          left: 0;
+          top: 50%;
+          transform: translate(-4.21875rem, -50%);
+          z-index: -1;
+  
+          content: "";
+          background-image: url("../assets/desktop/bg-pattern-wave-red.svg");
+          background-size: cover;
+          position: absolute;
+          
+        }
+  
+       
+      }
 
     /*
     &__container{
