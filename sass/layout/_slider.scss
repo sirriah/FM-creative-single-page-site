@@ -36,6 +36,7 @@
   }
 
   .slide2 {
+  
     background-image: url("../assets/mobile/image-slide-2.jpg");
     @include abstracts.breakpoint-up(medium) {
       background-image: url("../assets/tablet/image-slide-2.jpg");
@@ -46,6 +47,7 @@
   }
 
   .slide3 {
+  
     background-image: url("../assets/mobile/image-slide-3.jpg");
     @include abstracts.breakpoint-up(medium) {
       background-image: url("../assets/tablet/image-slide-3.jpg");
@@ -142,7 +144,7 @@
         grid-column: 2 / -1;
       }
     }
-    .button-arrow {
+    .button--arrow {
       margin-right: 1rem;
       text-decoration: none;
       display: inline-block;

@@ -1,0 +1,35 @@
+/*
+Animation of mobile toggle menu
+*/
+
+@keyframes fade-in {
+  from {
+      visibility: hidden;
+      opacity: 0;
+  }
+  
+  to {
+      visibility: visible;
+      opacity: 1;
+  }
+}
+
+.fade-in {
+    animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fade-out 300ms ease-in-out forwards;
+}

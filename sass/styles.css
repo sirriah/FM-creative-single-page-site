@@ -1,4 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap");
+/*
+Animation of mobile toggle menu
+*/
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
 h1, h2, h3 {
   font-family: "Commissioner", sans-serif;
   font-weight: 800;
@@ -218,7 +249,7 @@ body {
   color: #f94e4e;
   padding: 0.5rem 0rem;
   position: relative;
-  transition: opacity 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }
 .button--underline::after {
   content: "";
@@ -229,21 +260,26 @@ body {
   height: 2px;
   width: 100%;
   background-color: #f94e4e;
+  transition: background-color 200ms ease-in-out;
 }
 .button--underline:hover {
-  opacity: 0.6;
+  color: #ff9494;
   background-color: transparent;
+}
+.button--underline:hover::after {
+  background-color: #ff9494;
 }
 @media screen and (min-width: 64em) {
   .button--underline {
     font-size: 1.125rem;
   }
 }
-.button--arrow {
-  transition: opacity 200ms ease-in-out;
+.button--arrow svg g {
+  transition: stroke 200ms ease-in-out;
+  fill: black;
 }
-.button--arrow:hover {
-  opacity: 0.6;
+.button--arrow svg g:hover {
+  stroke: #ff9494;
 }
 
 .header {
@@ -251,6 +287,7 @@ body {
   grid-template-columns: subgrid;
   align-items: center;
   grid-column: 1/-1;
+  /*final stat of the animation of hamburger menu*/
 }
 .header .logo {
   grid-column: 2/4;
@@ -262,6 +299,10 @@ body {
   display: grid;
   grid-template-columns: subgrid;
   padding-block: 2.5rem;
+}
+.header .menu a {
+  text-decoration: none;
+  color: white;
 }
 @media screen and (min-width: 40em) {
   .header .menu {
@@ -279,25 +320,29 @@ body {
 .header .hamburger-menu {
   grid-column: 4/6;
   justify-self: end;
+  cursor: pointer;
 }
 .header .hamburger-menu span {
+  /*transition for animation of hamburger menu*/
+  transition: all 300ms ease-in-out;
   width: 1.5rem;
   height: 2px;
   background-color: #434356;
   display: block;
 }
 .header .hamburger-menu span:not(:last-of-type) {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 .header .mobile-nav {
   position: absolute;
-  top: 5rem;
-  right: 0;
+  top: 6rem;
+  right: 1rem;
   color: white;
   background-color: black;
   width: 15.75rem;
   padding: 1.625rem;
   text-align: center;
+  visibility: hidden;
 }
 .header .mobile-nav nav {
   list-style-type: none;
@@ -339,6 +384,17 @@ body {
 }
 .header .desktop-nav a {
   display: inline-block;
+}
+.header .open .hamburger-menu span:first-child {
+  transform-origin: left;
+  transform: rotate(45deg);
+}
+.header .open .hamburger-menu span:nth-child(2) {
+  opacity: 0;
+}
+.header .open .hamburger-menu span:last-child {
+  transform-origin: left;
+  transform: rotate(-45deg);
 }
 
 .main {
@@ -497,6 +553,14 @@ body {
     width: 8.4375rem;
     height: 3.8125rem;
     transform: translate(-13.8rem, 2rem);
+  }
+}
+.details__headline br {
+  display: none;
+}
+@media screen and (min-width: 40em) {
+  .details__headline br {
+    display: inline;
   }
 }
 .details__paragraph {
@@ -748,7 +812,7 @@ body {
     grid-column: 2/-1;
   }
 }
-.slider__text .button-arrow {
+.slider__text .button--arrow {
   margin-right: 1rem;
   text-decoration: none;
   display: inline-block;
@@ -787,7 +851,7 @@ body {
 }
 @media screen and (min-width: 40em) {
   .footer .button--primary {
-    grid-column: 8/10;
+    grid-column: 7/10;
     justify-self: end;
   }
 }
