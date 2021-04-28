@@ -15,7 +15,6 @@ This is a solution to the [Creative agency single page site challenge on Fronten
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
