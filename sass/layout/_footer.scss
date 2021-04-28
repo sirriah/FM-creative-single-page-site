@@ -1,19 +1,20 @@
 @use '../abstracts';
 
 .footer{
-    grid-column: 1 / -1;
-    padding: 4.875rem 1.5rem 6.25rem;
+    @include abstracts.grid;
+    
+    padding: 4.875rem 0 6.25rem;
     position: relative;
 
     @include abstracts.breakpoint-up(medium){
-        display: grid;
-        grid-template-columns: subgrid;
+        
         align-items: center;
         justify-content: center;
     }
 
     h2{
         margin-bottom: 2.875rem;
+        grid-column: 2 / 9;
 
         @include abstracts.breakpoint-up(medium){
             grid-column: 2 / 7;
@@ -22,9 +23,14 @@
 
     .button--primary{
         font-size: 1rem;
+        grid-column: 2 / 8;
+        justify-self: flex-start;
+        grid-row: 2;
+
 
         @include abstracts.breakpoint-up(medium){
             grid-column: 7 / 10;
+            grid-row: 1;
             justify-self: end;
         }
 

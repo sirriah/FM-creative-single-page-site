@@ -1,54 +1,81 @@
-const slides = document.getElementsByClassName('slider__image');
-const slideHeadline = document.getElementsByClassName('slide__headline');
-const sliderSection = document.getElementsByClassName('slider');
-
-let currentSlide = 0;
-let previousSlide = 0;
-
-function stepSlide(step){
-    previousSlide = currentSlide;
-    currentSlide = (((currentSlide + step) % slides.length) + slides.length) % slides.length;
-// test
 /*
-    slides[previousSlide].classList.remove('fade-in');
-    slides[previousSlide].classList.add('fade-out');
-    slideHeadline[previousSlide].classList.remove('fade-in');
-    slideHeadline[previousSlide].classList.add('fade-out');
+This code is taken from tutorial by Weibenfalk on youtube
+https://www.youtube.com/watch?v=6AuH3xSo6f8
 
-
-    slides[currentSlide].classList.remove('fade-in');
-    slides[currentSlide].classList.add('fade-out');
-    slideHeadline[currentSlide].classList.remove('fade-in');
-    slideHeadline[currentSlide].classList.add('fade-out');
 */
-//slides[currentSlide].classList.remove('animated');
-slides[currentSlide].style.zIndex = "2";
-slides[previousSlide].classList.add('slide-right');
-document.querySelector('.slide-right').addEventListener('animationend', function() {
-    slides[previousSlide].classList.remove('slide-right');
-    console.log("animace probehla");
-    slides[currentSlide].style.zIndex = "3";
-    slides[previousSlide].style.zIndex = "1";
+
+document.addEventListener('DOMContentLoaded', () => {
+
     
-});
-/*
-slides[previousSlide].classList.add('hidden');
-    slideHeadline[previousSlide].classList.add('hidden');
+    const forwardButton = document.querySelector('#buttonForward');
+    const backButton = document.querySelector('#buttonBackward');
+    const allSlides = [...document.querySelectorAll('.slider__image')];
+    const allHeadlines = [...document.querySelectorAll('.slide__headline')];
 
-    slides[currentSlide].classList.remove('hidden');
-    slideHeadline[currentSlide].classList.remove('hidden');
-*/
+    let activeSlideIndex = null;
+    let clickable = true;
+    let active = null; // active image
+    let newActive = null;
 
-/*
-    slides[previousSlide].classList.add('hidden');
-    slideHeadline[previousSlide].classList.add('hidden');
+    let activeHeadlineIndex = null;
+    let enabled = null; // active headline
+    let newActiveHeadline = null;
+    
+    
+   
 
-    slides[currentSlide].classList.remove('hidden');
-    slideHeadline[currentSlide].classList.remove('hidden');
- */
-}
-/*
-anime({
-    targets: slides[currentSlide]
-});
-*/
+    function changeSlide(forward) {
+        if(clickable) {
+            clickable = false;
+            active = document.querySelector('.active');
+            activeSlideIndex = allSlides.indexOf(active);
+
+            enabled = document.querySelector('.enabled');
+            activeHeadlineIndex = allHeadlines.indexOf(enabled);
+
+            if(forward){
+                //console.log("active slide index: ", activeSlideIndex);
+                //console.log("allSlides length: ", allSlides.length);
+                //console.log("new slide: ", (activeSlideIndex + 1) % allSlides.length);
+            
+                newActive = allSlides[(activeSlideIndex + 1) % allSlides.length];
+                active.classList.add('slideOutLeft'); // animation 
+                newActive.classList.add('slideInRight', 'active'); // animation
+
+                newActiveHeadline = allHeadlines[(activeHeadlineIndex + 1) % allHeadlines.length];
+                enabled.classList.add('slideOutBottom');
+                newActiveHeadline.classList.add('slideInTop', 'enabled');
+
+
+            } else {
+                newActive = allSlides[(activeSlideIndex - 1 + allSlides.length) % allSlides.length];
+                active.classList.add('slideOutRight'); // animation
+                newActive.classList.add('slideInLeft', 'active'); // animation
+
+                newActiveHeadline = allHeadlines[(activeHeadlineIndex - 1 + allHeadlines.length) % allHeadlines.length];
+                enabled.classList.add('slideOutTop');
+                newActiveHeadline.classList.add('slideInBottom', 'enabled');
+            }
+        }
+    }
+
+    // this function wait until the animation is finished and then it do the code inside
+    allSlides.forEach(slide => {
+        slide.addEventListener('transitionend', () => {
+            if(slide === active && !clickable) {
+                clickable = true;
+                active.className = "slider__image slide" + activeSlideIndex; 
+                enabled.className = "slide__headline";
+            }
+        })
+    });
+    
+    forwardButton.addEventListener('click', () => {
+        changeSlide(true);
+    });
+    backButton.addEventListener('click', () => {
+        changeSlide(false);
+    });
+    
+  
+ });
