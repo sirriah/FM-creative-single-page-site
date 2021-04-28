@@ -1,4 +1,4 @@
-
+// Javascript for openning an closing of mobile menu
 
 var menu = document.querySelector('.menu');
 var menuToggle = document.querySelector('#mobile-navigation');

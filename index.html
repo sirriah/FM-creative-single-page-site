@@ -26,6 +26,7 @@
         />
 
         <div class="menu">
+          <!-- This is mobile hamburger menu -->
           <span class="sr-only">Menu</span>
           <div class="hamburger-menu mobile-only">
             <span></span>
@@ -33,6 +34,7 @@
             <span></span>
           </div>
 
+          <!-- This is mobile toggle menu -->
           <div class="mobile-nav" id="mobile-navigation">
             <nav aria-label="Main">
               <li><a href="#" class="link">About</a></li>
@@ -44,6 +46,7 @@
             </a>
           </div>
 
+          <!-- This is desktop menu -->
           <div class="desktop-nav tablet-desktop">
             <nav aria-label="Main">
               <li><a href="#" class="link">About</a></li>
@@ -83,16 +86,18 @@
             </span>
           </div>
 
-          <div class="details__design ">
+          <div class="details__design">
             <h2 class="details__headline color--light">
-              <span class="color--primary">Design</span> is <br>strategic.
+              <span class="color--primary">Design</span> is <br />strategic.
             </h2>
             <p class="details__paragraph color--light">
               "A well-crafted design strategy consistently produces desired
               outcomes and brand awareness. We are firm believers that success
               lies in creative collaboration with our clients."
             </p>
-            <a href="#" class="details__button button--underline">Schedule a call</a>
+            <a href="#" class="details__button button--underline"
+              >Schedule a call</a
+            >
           </div>
 
           <div class="details__approach">
@@ -128,67 +133,68 @@
           </div>
         </section>
 
+        <!-- This is slider section - images is setted as background images of .slider__image -->
         <section class="slider">
-         <div class="slides">
-          <div class="slider__image active slide0">
-            <div class="slider__content">
-              <h3>Lean Product Roadmap</h3>
-              <p>2019 Project</p>
+          <div class="slides">
+            <div class="slider__image active slide0">
+              <div class="slider__content">
+                <h3>Lean Product Roadmap</h3>
+                <p>2019 Project</p>
+              </div>
             </div>
 
-          </div>
+            <div class="slider__image slide1">
+              <div class="slider__content">
+                <h3>New Majestic Hotel</h3>
+                <p>2018 Project</p>
+              </div>
+            </div>
 
-          <div class="slider__image slide1">
-            <div class="slider__content">
-              <h3>New Majestic Hotel</h3>
-              <p>2018 Project</p>
+            <div class="slider__image slide2">
+              <div class="slider__content">
+                <h3>Crypto Dashboard</h3>
+                <p>2016 Project</p>
+              </div>
             </div>
           </div>
 
-          <div class="slider__image slide2">
-            <div class="slider__content">
-              <h3>Crypto Dashboard</h3>
-              <p>2016 Project</p>
-            </div>
-          </div>
-         </div>
-            
+          <div class="slider__text">
+            <h2 class="slide__headline enabled">
+              Brand naming &<br />guidelines
+            </h2>
+            <h2 class="slide__headline">
+              Brand identity &<br />
+              merchandise
+            </h2>
+            <h2 class="slide__headline">
+              Brand identity &<br />
+              web design
+            </h2>
 
-            <div class="slider__text">
-              <h2 class="slide__headline enabled">
-                Brand naming &<br>guidelines
-              </h2>
-              <h2 class="slide__headline">
-                Brand identity &<br> merchandise
-              </h2>
-              <h2 class="slide__headline">
-                Brand identity &<br> web design
-              </h2>
-
-              <!-- button contains svg icons that are inserted directly with svg tags -->
-              <div class="slide__buttons">
-                <a href="javascript:void(0)"
+            <!-- button contains svg icons that are inserted directly with svg tags -->
+            <div class="slide__buttons">
+              <a
+                href="javascript:void(0)"
                 class="button--arrow"
                 role="button"
                 id="buttonBackward"
-                >
+              >
                 <div class="sr-only">previous slide</div>
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                  <g transform="matrix(-1 0 0 1 40 0)"
+                  <g
+                    transform="matrix(-1 0 0 1 40 0)"
                     stroke="#F94F4F"
                     fill="none"
-                    fill-rule="evenodd">
+                    fill-rule="evenodd"
+                  >
                     <circle cx="20" cy="20" r="19.5" />
                     <path stroke-width="2" d="M17.5 15l5 5-5 5" />
                   </g></svg></a>
 
-              <a
-                href="javascript:void(0)"
-                class="button--arrow"
-                id="buttonForward"
-                role="button"
-                
-              >
+              <a href="javascript:void(0)"
+                 class="button--arrow"
+                 id="buttonForward"
+                 role="button">
                 <div class="sr-only">next slide</div>
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                   <g stroke="#F94F4F" fill="none" fill-rule="evenodd">
@@ -197,10 +203,8 @@
                   </g>
                 </svg>
               </a>
-              </div>
-              
             </div>
-         
+          </div>
         </section>
       </main>
 

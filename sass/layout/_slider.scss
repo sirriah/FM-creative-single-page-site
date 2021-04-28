@@ -9,7 +9,7 @@
     grid-column: 1 / -1;
     position: relative;
     height: 25.25rem;
-    // +++++++++++++++++++++++++++++++++++++++++++++      REVIZE
+ 
     @include abstracts.breakpoint-up(medium) {
       grid-column: 5 / -1;
       grid-row: 1;
@@ -33,7 +33,6 @@
     animation-duration: 500ms;
 
     @include abstracts.breakpoint-up(medium) {
-      //z-index: 3;
       height: 100%;
     }
 
@@ -75,6 +74,7 @@
     }
   }
 
+  // class for animation of image in slider
   .active {
     z-index: 10;
   }
@@ -104,29 +104,20 @@
   }
 
   &__text {
-
     @include abstracts.grid;
-      
-      
-
     color: abstracts.$primary10;
     background-color: abstracts.$secondary900;
     padding-top: 2.5rem;
     padding-bottom: 4rem;
-    //padding-inline: 1.5rem;
     grid-column: 1 / -1;
     position: relative;
-
-
 
     @include abstracts.breakpoint-up(medium) {
       grid-template-columns: minmax(1.5rem, 1fr) 
       repeat(4, minmax(1rem, 7.8125rem));
-      //height: 390px;
       grid-column: 1 / 6;
       grid-row: 1;
       column-gap: 1rem;
-      // height: 22rem;
       z-index: 10;
       padding-top: 4.875rem;
       padding-bottom: 6.25rem;
@@ -137,6 +128,7 @@
       padding-bottom: 9.5rem;
     }
 
+    // the wave image decoration
     &::after {
       @include abstracts.breakpoint-up(medium) {
         width: 3.9375rem;
@@ -167,6 +159,7 @@
       animation-duration: 500ms;
     }
 
+    // class for animation of headline slider
     .enabled{
       visibility: visible;
     }

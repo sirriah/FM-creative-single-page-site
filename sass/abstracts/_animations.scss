@@ -34,37 +34,6 @@ Animation of mobile toggle menu
     animation: fade-out 300ms ease-in-out forwards;
 }
 
-/* slider animation */
-/*
-@keyframes slide-right {
-    0% {
-        transform: translateX(0%);
-        opacity: 1;
-        //z-index: 3;
-    }
-    98%{
-        transform: translateX(100%);
-        opacity: 0;
-       // z-index: 3;
-    }
-    
-    99%{
-        transform: translateX(0%);
-        opacity: 0;
-       // z-index: 3;
-    }
-
-    100%{
-        transform: translateX(0%);
-        opacity: 1;
-        //z-index: 1;
-    }
-}
-
-.slide-right {
-    animation: slide-right 1000ms ease-in-out forwards;
-}
-*/
 
 
 // source https://www.youtube.com/watch?v=6AuH3xSo6f8

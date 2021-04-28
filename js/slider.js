@@ -1,7 +1,9 @@
 /*
 This code is taken from tutorial by Weibenfalk on youtube
 https://www.youtube.com/watch?v=6AuH3xSo6f8
-
+I have made some modification
+ - I add transition property directly to .slider__image
+ - I add another animation for headline
 */
 
 document.addEventListener('DOMContentLoaded', () => {
