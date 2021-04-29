@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution on URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/creative-single-page-site-css-grid-mobilefirst-sass-vanilla-js-wn_Z2iUHv)
+- Live Site URL: [Vercel](https://fm-creative-single-page-site.vercel.app/)
 
 ## My process
 
