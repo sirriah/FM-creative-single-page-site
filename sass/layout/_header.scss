@@ -97,8 +97,15 @@
       list-style-type: none;
     }
 
+    ul{
+      padding: 0;
+    }
+
     li {
       padding-bottom: 1.5rem;
+      text-decoration: none;
+      display: block;
+      
     }
 
     
@@ -117,6 +124,10 @@
     nav {
       list-style-type: none;
       float: right;
+    }
+
+    ul{
+      display: inline;
     }
 
     li {
