@@ -368,6 +368,14 @@ body {
 .header .menu a:hover {
   font-weight: 800;
 }
+.header .menu a::before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
 @media screen and (min-width: 40em) {
   .header .menu {
     background-color: #f94e4e;
