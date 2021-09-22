@@ -18,20 +18,21 @@
   <body>
     <div class="grid_wrapper">
       <header class="header">
-        <img
-          class="logo"
+        <a class="logo" href="#">
+          <span class="sr-only">Creative - Homepage</span>
+          <img
+          
           src="./assets/desktop/logo.svg"
           alt="Creative company logo"
         />
-
-        <div class="menu">
+        </a>
+         <div class="menu">
           <!-- This is mobile hamburger menu -->
-          <span class="sr-only">Menu</span>
-          <div class="hamburger-menu mobile-only">
+          <button class="hamburger-menu mobile-only" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
 
           <!-- This is mobile toggle menu -->
           <div class="mobile-nav" id="mobile-navigation">
@@ -42,9 +43,9 @@
               <li><a href="#" class="link">Projects</a></li>
               </ul>
             </nav>
-            <a class="button--menu button--primary" href="#" role="button">
+            <button class="button--menu button--primary" href="#">
               Schedule a Call
-            </a>
+            </button>
           </div>
 
           <!-- This is desktop menu -->
@@ -55,9 +56,9 @@
               <li><a href="#" class="link" title="Service">Service</a></li>
               <li><a href="#" class="link" title="Projects">Projects</a></li>
               </ul>
-              <a class="button--menu button--secondary" href="#" role="button">
+              <button class="button--menu button--secondary" href="#">
                 Schedule a Call
-              </a>
+              </button>
             </nav>
           </div>
         </div>
@@ -65,11 +66,8 @@
 
       <main class="main">
         <section class="hero">
-          <div class="hero__image">
-            <span class="sr-only">
-              Image: Two men sitting in office and working on computers and
-              laptops
-            </span>
+          <div class="hero__image" role="img" alt="Two men sitting in office and working on computers and
+          laptops">
           </div>
           <div class="hero__text container">
             <h1>Branding & website design agency</h1>
@@ -83,10 +81,7 @@
         </section>
 
         <section class="details">
-          <div class="details__image">
-            <span class="sr-only">
-              Image: Flatlay image with the laptop. Somebody is working on it.
-            </span>
+          <div class="details__image" >
           </div>
 
           <div class="details__design">
@@ -98,9 +93,8 @@
               outcomes and brand awareness. We are firm believers that success
               lies in creative collaboration with our clients."
             </p>
-            <a href="#" class="details__button button--underline"
-              >Schedule a call</a
-            >
+            <button href="#" class="details__button button--underline"
+              >Schedule a call</button>
           </div>
 
           <div class="details__approach">
@@ -176,10 +170,9 @@
 
             <!-- button contains svg icons that are inserted directly with svg tags -->
             <div class="slide__buttons">
-              <a
+              <button
                 href="javascript:void(0)"
                 class="button--arrow"
-                role="button"
                 id="buttonBackward"
               >
                 <div class="sr-only">previous slide</div>
@@ -192,12 +185,11 @@
                   >
                     <circle cx="20" cy="20" r="19.5" />
                     <path stroke-width="2" d="M17.5 15l5 5-5 5" />
-                  </g></svg></a>
+                  </g></svg></button>
 
-              <a href="javascript:void(0)"
+              <button href="javascript:void(0)"
                  class="button--arrow"
-                 id="buttonForward"
-                 role="button">
+                 id="buttonForward">
                 <div class="sr-only">next slide</div>
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                   <g stroke="#F94F4F" fill="none" fill-rule="evenodd">
@@ -205,7 +197,7 @@
                     <path stroke-width="2" d="M17.5 15l5 5-5 5" />
                   </g>
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -213,7 +205,7 @@
 
       <footer class="footer footer__container">
         <h2>Let's build something great together.</h2>
-        <a href="#" class="button--primary"> Schedule a Call</a>
+        <button href="#" class="button--primary"> Schedule a Call</button>
       </footer>
     </div>
 

@@ -4,17 +4,16 @@
     box-sizing: border-box;
 }
 
-html{
-    width: 100vw;
-}
-
 body{
     box-sizing: border-box;
     font-family: "Commissioner", sans-serif;
     margin: 0;
     padding: 0;
-    width: 100vw;
 }
+
+a:focus, a:focus-visible{
+    border: dotted 2px blue;
+  }
 
 .sr-only{
     width: 1px;

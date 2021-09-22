@@ -222,16 +222,15 @@ p {
   box-sizing: border-box;
 }
 
-html {
-  width: 100vw;
-}
-
 body {
   box-sizing: border-box;
   font-family: "Commissioner", sans-serif;
   margin: 0;
   padding: 0;
-  width: 100vw;
+}
+
+a:focus, a:focus-visible {
+  border: dotted 2px blue;
 }
 
 .sr-only {
@@ -269,9 +268,14 @@ body {
   text-transform: capitalize;
   display: inline-block;
   transition: background-color 200ms ease-in-out;
+  border: none;
+  cursor: pointer;
 }
 .button:hover, .button--underline:hover, .button--secondary:hover, .button--primary:hover {
   background-color: #ff9494;
+}
+.button :focus, .button--underline :focus, .button--secondary :focus, .button--primary :focus, .button :focus-visible, .button--underline :focus-visible, .button--secondary :focus-visible, .button--primary :focus-visible {
+  border: dotted 2px blue;
 }
 .button--primary {
   font-size: 1.125rem;
@@ -296,6 +300,7 @@ body {
 .button--underline {
   font-size: 0.9375rem;
   color: #f94e4e;
+  background-color: transparent;
   padding: 0.5rem 0rem;
   position: relative;
   transition: color 200ms ease-in-out;
@@ -322,6 +327,11 @@ body {
   .button--underline {
     font-size: 1.125rem;
   }
+}
+.button--arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .button--arrow svg g {
   transition: stroke 200ms ease-in-out;
@@ -393,6 +403,8 @@ body {
   grid-row: 1;
   justify-self: end;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 .header .hamburger-menu span {
   /*transition for animation of hamburger menu*/

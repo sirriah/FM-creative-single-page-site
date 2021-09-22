@@ -7,9 +7,15 @@
   text-transform: capitalize;
   display: inline-block;
   transition: background-color 200ms ease-in-out;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: abstracts.$primary300;
+  }
+
+  :focus, :focus-visible{
+    border: dotted 2px blue;
   }
 
   &--primary {
@@ -40,9 +46,11 @@
         @extend .button;
         font-size: 0.9375rem;
         color: abstracts.$primary500;
+        background-color: transparent;
         padding: 0.5rem 0rem;
         position: relative;
         transition: color 200ms ease-in-out;
+
 
         &::after {
             content: "";
@@ -71,7 +79,12 @@
         }
   }
 
-  &--arrow svg g{
+  &--arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg g{
     transition: stroke 200ms ease-in-out;
     fill: black;
 
@@ -79,4 +92,5 @@
       stroke: abstracts.$primary300;
     }
   }
+}
 }
