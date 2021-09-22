@@ -49,7 +49,7 @@ Users should be able to:
 ### What I learned
 
 I learned, that I need to verify some new properties of CSS in caniuse.com :). I used things like 
-`code` grid-template-columns: subgrid; `code` or `code`padding-inline: 1rem;`code` etc. So later I realized that this only works in firefox, but not in chrome or safari.
+` grid-template-columns: subgrid; `or `codepadding-inline: 1rem;` etc. So later I realized that this only works in firefox, but not in chrome or safari.
 
 Next I learned about "transitionend" in javascript, which wait for CSS animation and do the code after it finish. This was really helpful in my slider section.
 
