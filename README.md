@@ -49,7 +49,7 @@ Users should be able to:
 ### What I learned
 
 I learned, that I need to verify some new properties of CSS in caniuse.com :). I used things like 
-` grid-template-columns: subgrid; `or `codepadding-inline: 1rem;` etc. So later I realized that this only works in firefox, but not in chrome or safari.
+` grid-template-columns: subgrid; `or `padding-inline: 1rem;` etc. So later I realized that this only works in firefox, but not in chrome or safari.
 
 Next I learned about "transitionend" in javascript, which wait for CSS animation and do the code after it finish. This was really helpful in my slider section.
 
@@ -61,7 +61,7 @@ I know, that I need more exercise from JS. I made the slider with tutorial. I un
 
 ### Useful resources
 
-- [Tutorial from Weibenfalk on YouTube](https://www.youtube.com/watch?v=6AuH3xSo6f8) - This helped me for with my slider. First I started build the code alone, but I could not figure out, how the "transitionend" works
+- [Tutorial from Weibenfalk on YouTube](https://www.youtube.com/watch?v=6AuH3xSo6f8) - This helped me with my slider. First I started to build the code alone, but I could not figure out, how the "transitionend" works
 - [Caniuse.org](https://caniuse.org) - If I used this earlier, it wouldn't spend so much time on this challenge.
 
 
