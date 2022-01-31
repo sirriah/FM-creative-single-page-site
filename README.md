@@ -49,14 +49,14 @@ Users should be able to:
 ### What I learned
 
 I learned, that I need to verify some new properties of CSS in caniuse.com :). I used things like 
-` grid-template-columns: subgrid; `or `padding-inline: 1rem;` etc. So later I realized that this only works in firefox, but not in chrome or safari.
+` grid-template-columns: subgrid; ` etc. So later I realized that this only works in firefox, but not in chrome or safari.
 
 Next I learned about "transitionend" in javascript, which wait for CSS animation and do the code after it finish. This was really helpful in my slider section.
 
 
 ### Continued development
 
-I know, that I need more exercise from JS. I made the slider with tutorial. I understand all the parts, but I cannot write the code alone. 
+I know, that I need more exercises from JS. I made the slider with some tutorials. 
 
 
 ### Useful resources
